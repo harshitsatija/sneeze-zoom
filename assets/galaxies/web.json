@@ -1,0 +1,39 @@
+{
+ "webfar": {
+  "fields": [
+   "x",
+   "y",
+   "z",
+   "R",
+   "gauss",
+   "puffR",
+   "shell"
+  ],
+  "unit": "Mpc",
+  "count": 11900
+ },
+ "web2mrs": {
+  "fields": [
+   "x",
+   "y",
+   "z",
+   "MV",
+   "T",
+   "b/a",
+   "zoaClone"
+  ],
+  "unit": "Mpc",
+  "count": 41746
+ },
+ "puffs2mrs": {
+  "fields": [
+   "x",
+   "y",
+   "z",
+   "R",
+   "logN"
+  ],
+  "unit": "Mpc",
+  "count": 4145
+ }
+}

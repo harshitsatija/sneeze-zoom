@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><canvas id="c" width="1600" height="1000"></canvas>
+<script type="module">
+import { look, FAM, body, orb, halo, gel, bokeh, blob } from '../core/look.js';
+import { T } from '../core/kit.js';
+const c = document.getElementById('c').getContext('2d');
+const zs = [-34, -26, -17, -12, -8, -5, -3.5, -2.3, -1, 1.5, 4, 7, 12, 20, 27]; const w = 1600 / zs.length;
+zs.forEach((z, i) => { const L = look(z); const x0 = i * w;
+  c.setTransform(1,0,0,1,0,0); c.fillStyle = L.medium; c.fillRect(x0, 0, w, 1000);
+  // far layer (sunk), mid, hero, near bokeh
+  const fams = [FAM.magenta, FAM.cyan, FAM.gold, FAM.violet];
+  for (let k = 0; k < 3; k++) { const f = fams[(i + k) % 4]; const sk = { base: mixC(f.base, L.haze, 0.6), dark: mixC(f.dark, L.deep, 0.6), lit: mixC(f.lit, L.haze, 0.6), glow: f.glow };
+    T(c, { a: 22, b: 0, c: 0, d: 22, e: x0 + 20 + k * 30, f: 120 + k * 60 }); body(c, blob(i * 10 + k, 0.1, 5), sk, { hi: false }); }
+  const f = fams[i % 4]; T(c, { a: 34, b: 0, c: 0, d: 34, e: x0 + w / 2, f: 420 }); body(c, blob(i, 0.09, 6), f, { core: 0.6 });
+  c.setTransform(1,0,0,1,0,0); halo(c, x0 + w / 2, 620, 50, FAM.gold, 0.5); orb(c, x0 + w / 2, 620, 16, FAM.gold);
+  T(c, { a: 40, b: 0, c: 0, d: 40, e: x0 + w / 2, f: 800 }); gel(c, blob(i + 3, 0.15, 5), FAM.cyan.lit, 0.3);
+  c.setTransform(1,0,0,1,0,0); c.fillStyle = '#fff'; c.font = '14px sans-serif'; c.fillText('z ' + z, x0 + 8, 980);
+});
+function mixC(a, b, t) { const pa = parseInt(a.slice(1), 16), pb = parseInt(b.slice(1), 16); const ch = (s) => Math.round(((pa >> s) & 255) * (1 - t) + ((pb >> s) & 255) * t); return '#' + [16, 8, 0].map((s) => ch(s).toString(16).padStart(2, '0')).join(''); }
+document.title = 'ok';
+</script>

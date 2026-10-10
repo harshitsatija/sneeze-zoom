@@ -1,0 +1,53 @@
+{
+ "count": 42422,
+ "fields": [
+  "x_pc",
+  "y_pc",
+  "z_pc",
+  "absmag",
+  "ci"
+ ],
+ "frame": "J2000 equatorial, Sun at origin",
+ "named": [
+  {
+   "i": 26197,
+   "text": "Sirius",
+   "sub": "8.7 light-years"
+  },
+  {
+   "i": 33340,
+   "text": "Procyon",
+   "sub": "11.5 light-years"
+  },
+  {
+   "i": 38386,
+   "text": "Alpha Centauri A/B",
+   "sub": "4.34 light-years"
+  },
+  {
+   "i": 39472,
+   "text": "Epsilon Eridani",
+   "sub": "10.5 light-years"
+  },
+  {
+   "i": 40958,
+   "text": "Lalande 21185",
+   "sub": "8.30 light-years"
+  },
+  {
+   "i": 42039,
+   "text": "Barnard's Star",
+   "sub": "5.96 light-years"
+  },
+  {
+   "i": 42359,
+   "text": "Proxima Centauri",
+   "sub": "4.25 light-years \u00b7 the nearest star"
+  },
+  {
+   "i": 42397,
+   "text": "Wolf 359",
+   "sub": "7.86 light-years"
+  }
+ ]
+}

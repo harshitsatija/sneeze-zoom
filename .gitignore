@@ -1,0 +1,8 @@
+.DS_Store
+shots/
+refs/
+research/
+reports/
+requests/
+tools/node_modules
+node_modules

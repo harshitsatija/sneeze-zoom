@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sneeze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#fff7e8;--dim:rgba(255,247,232,.62)}
+html,body{margin:0;height:100%;overflow:hidden;background:#0b1435;font-family:Nunito,system-ui,sans-serif;color:var(--ink)}
+canvas{display:block;position:fixed;inset:0}
+#labels{position:fixed;inset:0;pointer-events:none}
+.lab{position:absolute;left:0;top:0;white-space:nowrap;text-shadow:0 1px 6px rgba(10,0,30,.55);transform-origin:0 0}
+.lab b{display:block;font-weight:800;font-size:15px;letter-spacing:.02em;margin:10px 0 0 12px}
+.lab i{display:block;font-style:normal;font-weight:600;font-size:12px;color:var(--dim);margin-left:12px}
+#hud{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);font-weight:600;font-size:13px;color:var(--dim);letter-spacing:.04em;text-shadow:0 1px 6px rgba(10,0,30,.6);pointer-events:none}
+#nav{position:fixed;right:16px;bottom:12px;display:flex;gap:8px}
+#nav button{font:600 12px Nunito,system-ui;color:var(--ink);background:rgba(15,0,32,.35);border:1px solid rgba(255,247,232,.25);border-radius:14px;padding:5px 11px;cursor:pointer}
+#notes{position:fixed;right:16px;bottom:52px;max-width:340px;font-size:13px;line-height:1.45;background:rgba(15,0,32,.82);border:1px solid rgba(255,247,232,.2);border-radius:12px;padding:12px 14px;color:var(--ink)}#notes p{margin:6px 0 0;color:var(--dim)}
+#nav button:hover{background:rgba(15,0,32,.6)}
+#load{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0b1435;font-weight:600;color:var(--dim);transition:opacity .6s}
+body.shot #nav,body.shot #hud{display:none}
+</style></head>
+<body>
+<canvas id="c"></canvas><div id="labels"></div><div id="hud"></div>
+<div id="notes" hidden><b>Sneeze</b><p>A man sneezes on Fifth Avenue at the Met, 23 April 2026, 12:30 pm. Every object sits at its real size and position, from real data (NYC buildings, coastlines, a real nucleosome's atoms, real stars and galaxies, real planet positions for that moment).</p><p>Illustrative: planets, the Moon and nearby galaxies are drawn no smaller than a few pixels; cell interiors, the vacuum "bubbles" below the quark and the Planck foam are artistic. Quarks have no measured size.</p><p>Scroll or use ↑ ↓ to zoom.</p></div>
+<div id="nav"><button id="binfo" title="notes">i</button><button id="bin" title="zoom in (↓)">◀ zoom in</button><button id="bout" title="zoom out (↑)">zoom out ▶</button></div>
+<div id="load">loading…</div>
+<script type="module" src="main.js"></script>
+</body></html>
